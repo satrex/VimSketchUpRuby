@@ -1,0 +1,53 @@
+*SketchUpRuby.txt*
+
+Author: Satoshi Suzuki                             *skethupruby-author*
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+==============================================================================
+INTRODUCTION                                    *skethupruby*
+
+Install in ~/.vim
+
+Set the path to your Google/Trimble SketchUp plugins directory in your .vimrc.(default directory "/Library/Application Support/Google SketchUp 8/SketchUp/Plugins/")
+
+Example: >
+    let g:su_plugin_path = "path/to/directory/"
+<
+
+You may also want to add a few mappings to stream line the behavior: >
+    nnoremap <Leader>sun  :SketchUpRubyNew<CR>
+    nnoremap <Leader>sul  :SketchUpRubyList<CR>
+    nnoremap <Leader>sug  :SketchUpRubyGrep<CR>
+    nnoremap <leader>sur :SketchUpRubyRun<CR>
+<
+==============================================================================
+COMMANDS                                        *sketchupruby-commands*
+
+                                                *sketchupruby-:SketchUpRubyList*
+:SketchUpRubyList               List SketchUp Plugins.
+    Show up Plugin file list in new buffer.
+
+                                                *sketchupruby-:SketchUpRubyNew*
+:SketchUpRubyNew                Create a new Plugin
+    You'll be asked like following: >
+         Post title:
+<
+    Use CTRL-C to cancel. 
+                                                *sketchupruby-:SketchUpRubyGrep*
+:SketchUpRubyGrep               Grep Octopress Plugins Directory
+
+    You'll be asked to search the keyword like following: >
+        SketchUpRubyGrep word:
+<
+
+==============================================================================
+ABOUT                                           *sketchupruby-about*
+
+Grab the latest version or report a bug on Github:
+
+http://github.com/satrex/VimSketchUpRuby
+
+==============================================================================
+ vim:tw=78:et:ft=help:norl:
