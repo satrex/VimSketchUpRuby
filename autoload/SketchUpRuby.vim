@@ -138,7 +138,7 @@ endif
   let currentScript += [ " plugins_menu = UI.menu(\"Plugins\") "]
   let currentScript += [ " item = plugins_menu.add_item(\"" . menu . "\") { " . methodName  . " }" ]  
   let currentScript += [ " file_loaded(__FILE__)"]
-  call writefile(currentScript,  g:su_deploy_path . "/" . expand("%:p:t") )
+  call writefile(currentScript,  g:su_deploy_path . expand("%:p:t") )
 
 " 拡張機能呼び出しファイルを作成
 let i = 0
@@ -150,7 +150,7 @@ let newLines += [ "require 'LangHandler.rb'" ]
 
 let newLines += [ "$exStrings = LanguageHandler.new(\"Examples.strings\")" ]
 
-let newLines += [ "examplesExtension = SketchupExtension.new $exStrings.GetString(\"Ruby Script Deployment\"), \"" . g:su_deploy_path . "/" . expand("%:p:t") . "\"" ]
+let newLines += [ "examplesExtension = SketchupExtension.new $exStrings.GetString(\"Ruby Script Deployment\"), \"" . g:su_deploy_path .  expand("%:p:t") . "\"" ]
                     
 let newLines += [ "examplesExtension.description=$exStrings.GetString(\"Adds examples of tools created in Ruby to the SketchUp interface.  The example tools are Draw->Box, Plugins->Cost and Camera->Animations.\")" ]
 "  let newLines += [ "file_loaded(__FILE__)" ]
@@ -160,14 +160,14 @@ let newLines += [ "examplesExtension.check" ]
   let newLines += []
   echo resolve(g:su_plugin_path)
   echo resolve(expand("%:p:t"))
-  "echo g:su_plugin_path . "/" . expand("%:t")
+  "echo g:su_plugin_path . expand("%:t")
   "
   call writefile(newLines,  g:su_plugin_path . expand("%:p:t") )
 
 
 " 拡張機能登録処理（既存の処理を抜いて、新しいスクリプトを登録） 
 " 既存の処理は抜けないっぽいので、SketchUpを再起動する
-execute "!osascript " . g:suBridgePath . "/" . "RestartSketchUp.scpt"
+execute "!osascript " . g:suBridgePath . "RestartSketchUp.scpt"
 
 endfunction
 

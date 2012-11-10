@@ -17,15 +17,15 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 if !exists('g:su_plugin_path')
-  let g:su_plugin_path = '/Library/Application\ Support/Google\ SketchUp\ 8/SketchUp/Plugins'
+  let g:su_plugin_path = '/Library/Application\ Support/Google\ SketchUp\ 8/SketchUp/Plugins/'
 endif
 
 if !exists('g:su_labo_path')
-  let g:su_labo_path = g:su_plugin_path . "/laboratory"
+  let g:su_labo_path = g:su_plugin_path . "laboratory/"
 endif
 
 if !exists('g:su_deploy_path')
-  let g:su_deploy_path = g:su_plugin_path . "/deploy"
+  let g:su_deploy_path = g:su_plugin_path . "deploy/"
 endif
 
 
