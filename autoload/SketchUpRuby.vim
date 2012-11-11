@@ -63,9 +63,9 @@ endfunction
 
 function! SketchUpRuby#list()
   if get(g:, 'vsu_vimfiler', 0) != 0
-    exe "VimFiler" s:escarg(g:su_plugin_path) 
+    exe "VimFiler" s:escarg(g:su_labo_path) 
   else
-    exe "e" s:escarg(g:su_plugin_path) 
+    exe "e" s:escarg(g:su_labo_path) 
   endif
 endfunction
 
